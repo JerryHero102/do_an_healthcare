@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Header from './components/Header';
-import Body from './components/body';
+import Header from './FontEnds/Home/Header';
+import Body from './FontEnds/Home/body';
 import DashBoard from './FontEnds/Admin/DashBoard'; 
 
 function App() {
