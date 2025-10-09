@@ -9,7 +9,7 @@ function App() {
         <Routes>
         <Route path="/" element={<Header />} />
         <Route path="/" element={<Body />} />
-        <Route path="/Admin" element={<DashBoard />} />
+        <Route path="/Admin" element={<DashBoard />}/>
       </Routes>
     </BrowserRouter>
   );
