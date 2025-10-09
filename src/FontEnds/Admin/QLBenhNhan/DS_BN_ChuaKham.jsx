@@ -1,11 +1,18 @@
 // Quản lý bệnh nhân chưa khám bệnh
-const QLBenhNhan = () => {
+const DS_BN_ChuaKham = ({setContext}) => {
   return (
     <div className="px-2">
       {/* Breadcrumb */}
         <div className="text-[10px] text-gray-900 bg-white mb-2 mt-1 px-4 py-2 rounded-md">
-            Quản lý bệnh nhân {/*&gt; Danh sách bệnh nhân*/}
-        </div>
+            {/*Phần text "Quản lý bệnh nhân" được làm thành nút bấm */}
+            <span 
+                className="cursor-pointer text-gray-600 hover:text-gray-900" 
+                onClick={() => setContext("Quản lý Bệnh Nhân")}
+            >
+                Quản lý Bệnh Nhân 
+            </span>
+            &nbsp;&gt;&nbsp; Danh sách bệnh nhân chưa khám bệnh
+        </div>
 
         {/* Tittle */}
         <div className="flex items-center justify-between mb-2 bg-white p-4 rounded-md shadow">
@@ -98,4 +105,4 @@ const QLBenhNhan = () => {
   );
 };
 
-export default QLBenhNhan;
+export default DS_BN_ChuaKham;
