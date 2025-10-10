@@ -1,23 +1,24 @@
 import Header from '../Home/Header';
 import Footer from '../Home/Footer';
+import styles from './ChuyenKhoa.module.css';
 
 const ChuyenKhoa = () => {
   return (
-    <div className="w-full">
+    <div className={styles.wrapper}>
       <Header />
       
       {/* Content chính của trang Chuyên Khoa */}
-      <div className="min-h-screen">
+      <div className={styles.mainContent}>
         {/* Banner */}
-        <section className="h-[300px] bg-[#E3FFF8] flex flex-col justify-center items-center text-center">
-          <h2 className="text-[36px] font-bold text-[#2c3e50]">Chuyên Khoa</h2>
-          <p className="text-[18px] mt-2 text-gray-600">Đội ngũ chuyên khoa giàu kinh nghiệm và chuyên môn cao</p>
+        <section className={styles.bannerSection}>
+          <h2 className={styles.bannerTitle}>Chuyên Khoa</h2>
+          <p className={styles.bannerSubtitle}>Đội ngũ chuyên khoa giàu kinh nghiệm và chuyên môn cao</p>
         </section>
 
         {/* Danh sách chuyên khoa */}
-        <section className="py-10 px-20">
-          <h3 className="text-[28px] font-semibold mb-8 text-[#2c3e50]">Các chuyên khoa của chúng tôi</h3>
-          <div className="grid grid-cols-3 gap-8">
+        <section className={styles.specialtiesSection}>
+          <h3 className={styles.sectionTitle}>Các chuyên khoa của chúng tôi</h3>
+          <div className={styles.specialtiesGrid}>
             {[
               { 
                 name: "Nội khoa", 
@@ -65,11 +66,11 @@ const ChuyenKhoa = () => {
                 icon: "🏥"
               }
             ].map((specialty, index) => (
-              <div key={index} className="bg-white shadow-lg p-8 rounded-2xl hover:shadow-xl transition-all cursor-pointer border border-gray-100">
-                <div className="text-[48px] mb-4">{specialty.icon}</div>
-                <h4 className="text-[22px] font-semibold text-[#2c3e50] mb-3">{specialty.name}</h4>
-                <p className="text-gray-600 text-[15px] leading-relaxed">{specialty.desc}</p>
-                <button className="mt-4 text-[#1e90ff] font-medium text-[15px] hover:underline">
+              <div key={index} className={styles.specialtyCard}>
+                <div className={styles.specialtyIcon}>{specialty.icon}</div>
+                <h4 className={styles.specialtyTitle}>{specialty.name}</h4>
+                <p className={styles.specialtyDesc}>{specialty.desc}</p>
+                <button className={styles.specialtyButton}>
                   Xem chi tiết →
                 </button>
               </div>
@@ -78,14 +79,14 @@ const ChuyenKhoa = () => {
         </section>
 
         {/* Thông tin thêm */}
-        <section className="py-10 px-20 bg-[#F8F9FA]">
-          <div className="max-w-4xl mx-auto text-center">
-            <h3 className="text-[26px] font-semibold mb-4 text-[#2c3e50]">Cam kết chất lượng</h3>
-            <p className="text-gray-700 text-[16px] leading-relaxed">
+        <section className={styles.commitmentSection}>
+          <div className={styles.commitmentContainer}>
+            <h3 className={styles.commitmentTitle}>Cam kết chất lượng</h3>
+            <p className={styles.commitmentText}>
               Với đội ngũ bác sĩ giàu kinh nghiệm, trang thiết bị hiện đại và quy trình khám chữa bệnh chuyên nghiệp, 
               chúng tôi cam kết mang đến dịch vụ y tế chất lượng cao nhất cho bệnh nhân.
             </p>
-            <button className="mt-6 bg-[#FFC419] hover:bg-[#e6ae14] text-white font-semibold px-8 py-3 rounded-xl shadow-md">
+            <button className={styles.commitmentButton}>
               Đặt lịch khám ngay
             </button>
           </div>

@@ -1,23 +1,24 @@
 import Header from '../Home/Header';
 import Footer from '../Home/Footer';
+import styles from './ChuyenGia.module.css';
 
 const ChuyenGia = () => {
   return (
-    <div className="w-full">
+    <div className={styles.wrapper}>
       <Header />
       
       {/* Content chính của trang Chuyên Gia */}
-      <div className="min-h-screen">
+      <div className={styles.mainContent}>
         {/* Banner */}
-        <section className="h-[300px] bg-[#E3FFF8] flex flex-col justify-center items-center text-center">
-          <h2 className="text-[36px] font-bold text-[#2c3e50]">Đội Ngũ Chuyên Gia</h2>
-          <p className="text-[18px] mt-2 text-gray-600">Bác sĩ chuyên môn cao, tận tâm với nghề nghiệp</p>
+        <section className={styles.bannerSection}>
+          <h2 className={styles.bannerTitle}>Đội Ngũ Chuyên Gia</h2>
+          <p className={styles.bannerSubtitle}>Bác sĩ chuyên môn cao, tận tâm với nghề nghiệp</p>
         </section>
 
         {/* Danh sách chuyên gia */}
-        <section className="py-10 px-20">
-          <h3 className="text-[28px] font-semibold mb-8 text-[#2c3e50]">Đội ngũ bác sĩ của chúng tôi</h3>
-          <div className="grid grid-cols-4 gap-6">
+        <section className={styles.doctorsSection}>
+          <h3 className={styles.sectionTitle}>Đội ngũ bác sĩ của chúng tôi</h3>
+          <div className={styles.doctorsGrid}>
             {[
               { 
                 name: "BS. Nguyễn Văn An", 
@@ -76,13 +77,13 @@ const ChuyenGia = () => {
                 image: "👩‍⚕️"
               }
             ].map((doctor, index) => (
-              <div key={index} className="bg-white shadow-lg p-6 rounded-2xl hover:shadow-xl transition-all cursor-pointer">
-                <div className="text-[72px] text-center mb-4">{doctor.image}</div>
-                <h4 className="text-[19px] font-semibold text-[#2c3e50] text-center">{doctor.name}</h4>
-                <p className="text-[#1e90ff] text-[15px] mt-2 text-center font-medium">🔹 {doctor.specialty}</p>
-                <p className="text-gray-600 text-[14px] mt-2 text-center">🎓 {doctor.education}</p>
-                <p className="text-gray-500 text-[13px] mt-1 text-center">⏱️ {doctor.exp}</p>
-                <button className="w-full mt-4 bg-[#FFC419] hover:bg-[#e6ae14] text-white font-medium text-[14px] py-2 rounded-lg">
+              <div key={index} className={styles.doctorCard}>
+                <div className={styles.doctorImage}>{doctor.image}</div>
+                <h4 className={styles.doctorName}>{doctor.name}</h4>
+                <p className={styles.doctorSpecialty}>🔹 {doctor.specialty}</p>
+                <p className={styles.doctorEducation}>🎓 {doctor.education}</p>
+                <p className={styles.doctorExp}>⏱️ {doctor.exp}</p>
+                <button className={styles.doctorButton}>
                   Đặt lịch khám
                 </button>
               </div>
@@ -91,9 +92,9 @@ const ChuyenGia = () => {
         </section>
 
         {/* Tại sao chọn chúng tôi */}
-        <section className="py-10 px-20 bg-[#F8F9FA]">
-          <h3 className="text-[28px] font-semibold mb-8 text-center text-[#2c3e50]">Tại sao chọn chúng tôi?</h3>
-          <div className="grid grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <section className={styles.whySection}>
+          <h3 className={styles.sectionTitleCenter}>Tại sao chọn chúng tôi?</h3>
+          <div className={styles.whyGrid}>
             {[
               {
                 title: "Đội ngũ chuyên môn cao",
@@ -111,10 +112,10 @@ const ChuyenGia = () => {
                 icon: "❤️"
               }
             ].map((item, index) => (
-              <div key={index} className="bg-white p-8 rounded-2xl shadow-md text-center">
-                <div className="text-[56px] mb-4">{item.icon}</div>
-                <h4 className="text-[20px] font-semibold text-[#2c3e50] mb-3">{item.title}</h4>
-                <p className="text-gray-600 text-[15px]">{item.desc}</p>
+              <div key={index} className={styles.whyCard}>
+                <div className={styles.whyIcon}>{item.icon}</div>
+                <h4 className={styles.whyTitle}>{item.title}</h4>
+                <p className={styles.whyDesc}>{item.desc}</p>
               </div>
             ))}
           </div>
