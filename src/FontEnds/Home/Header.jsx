@@ -1,31 +1,33 @@
+import styles from './Header.module.css';
+
 const Header = () => {
   return (
-    <div className="p-4 h-[100px] bg-[#EDFFFA] flex items-center justify-between">
+    <div className={styles.header}>
 
       {/* Logo + Menu */}
-      <div className="flex items-center space-x-4">
-        <a href="/" className="text-[20px] uppercase font-bold text-[#FFC419] pr-[25px] pl-[100px] hover:opacity-80 cursor-pointer">
+      <div className={styles.leftSection}>
+        <a href="/" className={styles.logo}>
           HealthCare
         </a>
-        <nav className="flex items-center space-x-4">
-          <a href="/" className="text-[18px] font-medium text-black hover:text-[#FFF3D1] hover:bg-[#FFC419] rounded-2xl pt-[5px] pb-[5px] px-[12px]">
+        <nav className={styles.nav}>
+          <a href="/" className={styles.navLink}>
             Trang chủ
           </a>
-          <a href="/chuyen-khoa" className="text-[18px] font-medium text-black hover:text-[#FFF3D1] hover:bg-[#FFC419] rounded-2xl pt-[5px] pb-[5px] px-[12px]">
+          <a href="/chuyen-khoa" className={styles.navLink}>
             Chuyên Khoa
           </a>
-          <a href="/chuyen-gia" className="text-[18px] font-medium text-black hover:text-[#FFF3D1] hover:bg-[#FFC419] rounded-2xl pt-[5px] pb-[5px] px-[12px]">
+          <a href="/chuyen-gia" className={styles.navLink}>
             Chuyên Gia
           </a>
-          <a href="/dich-vu" className="text-[18px] font-medium text-black hover:text-[#FFF3D1] hover:bg-[#FFC419] rounded-2xl pt-[5px] pb-[5px] px-[12px]">
+          <a href="/dich-vu" className={styles.navLink}>
             Dịch vụ
           </a>
         </nav>
       </div>
 
       {/* ✅ Phần bên phải: Login hoặc Hotline */}
-      <div className="pr-[100px]">
-        <button className="bg-[#FFC419] hover:bg-[#e6ae14] text-white font-semibold px-4 py-2 rounded-xl shadow-md">
+      <div className={styles.rightSection}>
+        <button className={styles.loginButton}>
           Đăng nhập
         </button>
       </div>
