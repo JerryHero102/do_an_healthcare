@@ -1,23 +1,24 @@
 import Header from '../Home/Header';
 import Footer from '../Home/Footer';
+import styles from './DichVu.module.css';
 
 const DichVu = () => {
   return (
-    <div className="w-full">
+    <div className={styles.wrapper}>
       <Header />
       
       {/* Content chính của trang Dịch Vụ */}
-      <div className="min-h-screen">
+      <div className={styles.mainContent}>
         {/* Banner */}
-        <section className="h-[300px] bg-[#E3FFF8] flex flex-col justify-center items-center text-center">
-          <h2 className="text-[36px] font-bold text-[#2c3e50]">Dịch Vụ Y Tế</h2>
-          <p className="text-[18px] mt-2 text-gray-600">Các dịch vụ y tế toàn diện, hiện đại và chuyên nghiệp</p>
+        <section className={styles.bannerSection}>
+          <h2 className={styles.bannerTitle}>Dịch Vụ Y Tế</h2>
+          <p className={styles.bannerSubtitle}>Các dịch vụ y tế toàn diện, hiện đại và chuyên nghiệp</p>
         </section>
 
         {/* Danh sách dịch vụ chính */}
-        <section className="py-10 px-20">
-          <h3 className="text-[28px] font-semibold mb-8 text-[#2c3e50]">Dịch vụ chính</h3>
-          <div className="grid grid-cols-3 gap-8">
+        <section className={styles.servicesSection}>
+          <h3 className={styles.sectionTitle}>Dịch vụ chính</h3>
+          <div className={styles.servicesGrid}>
             {[
               { 
                 name: "Khám bệnh trực tuyến", 
@@ -56,12 +57,12 @@ const DichVu = () => {
                 price: "Từ 800.000đ"
               }
             ].map((service, index) => (
-              <div key={index} className="bg-white shadow-lg p-8 rounded-2xl hover:shadow-xl transition-all cursor-pointer border border-gray-100">
-                <div className="text-[56px] mb-4">{service.icon}</div>
-                <h4 className="text-[22px] font-semibold text-[#2c3e50] mb-3">{service.name}</h4>
-                <p className="text-gray-600 text-[15px] leading-relaxed mb-4">{service.desc}</p>
-                <p className="text-[#FFC419] font-semibold text-[16px] mb-3">{service.price}</p>
-                <button className="w-full bg-[#FFC419] hover:bg-[#e6ae14] text-white font-medium py-2 rounded-lg">
+              <div key={index} className={styles.serviceCard}>
+                <div className={styles.serviceIcon}>{service.icon}</div>
+                <h4 className={styles.serviceTitle}>{service.name}</h4>
+                <p className={styles.serviceDesc}>{service.desc}</p>
+                <p className={styles.servicePrice}>{service.price}</p>
+                <button className={styles.serviceButton}>
                   Đặt lịch ngay
                 </button>
               </div>
@@ -70,9 +71,9 @@ const DichVu = () => {
         </section>
 
         {/* Gói khám sức khỏe */}
-        <section className="py-10 px-20 bg-[#F8F9FA]">
-          <h3 className="text-[28px] font-semibold mb-8 text-[#2c3e50]">Gói khám sức khỏe</h3>
-          <div className="grid grid-cols-3 gap-8">
+        <section className={styles.packageSection}>
+          <h3 className={styles.sectionTitle}>Gói khám sức khỏe</h3>
+          <div className={styles.servicesGrid}>
             {[
               {
                 name: "Gói Cơ Bản",
@@ -111,23 +112,23 @@ const DichVu = () => {
                 ]
               }
             ].map((pkg, index) => (
-              <div key={index} className={`bg-white p-8 rounded-2xl shadow-lg relative ${pkg.popular ? 'border-2 border-[#FFC419]' : 'border border-gray-100'}`}>
+              <div key={index} className={pkg.popular ? styles.packageCardPopular : styles.packageCard}>
                 {pkg.popular && (
-                  <div className="absolute -top-3 right-6 bg-[#FFC419] text-white px-4 py-1 rounded-full text-[13px] font-semibold">
+                  <div className={styles.popularBadge}>
                     Phổ biến nhất
                   </div>
                 )}
-                <h4 className="text-[24px] font-bold text-[#2c3e50] mb-2">{pkg.name}</h4>
-                <p className="text-[32px] font-bold text-[#FFC419] mb-6">{pkg.price}</p>
-                <ul className="space-y-3 mb-6">
+                <h4 className={styles.packageName}>{pkg.name}</h4>
+                <p className={styles.packagePrice}>{pkg.price}</p>
+                <ul className={styles.featureList}>
                   {pkg.features.map((feature, idx) => (
-                    <li key={idx} className="text-gray-700 text-[15px] flex items-start">
-                      <span className="text-[#1e90ff] mr-2">✓</span>
+                    <li key={idx} className={styles.featureItem}>
+                      <span className={styles.featureCheckmark}>✓</span>
                       <span>{feature}</span>
                     </li>
                   ))}
                 </ul>
-                <button className={`w-full font-semibold py-3 rounded-lg ${pkg.popular ? 'bg-[#FFC419] hover:bg-[#e6ae14] text-white' : 'bg-gray-100 hover:bg-gray-200 text-[#2c3e50]'}`}>
+                <button className={pkg.popular ? styles.packageButtonPopular : styles.packageButton}>
                   Chọn gói này
                 </button>
               </div>
@@ -136,31 +137,31 @@ const DichVu = () => {
         </section>
 
         {/* Quy trình đặt lịch */}
-        <section className="py-10 px-20">
-          <h3 className="text-[28px] font-semibold mb-8 text-center text-[#2c3e50]">Quy trình đặt lịch đơn giản</h3>
-          <div className="grid grid-cols-4 gap-6 max-w-6xl mx-auto">
+        <section className={styles.processSection}>
+          <h3 className={styles.sectionTitleCenter}>Quy trình đặt lịch đơn giản</h3>
+          <div className={styles.processGrid}>
             {[
               { step: "1", title: "Chọn dịch vụ", desc: "Lựa chọn dịch vụ phù hợp với nhu cầu" },
               { step: "2", title: "Đặt lịch", desc: "Chọn ngày giờ và bác sĩ mong muốn" },
               { step: "3", title: "Xác nhận", desc: "Nhận thông báo xác nhận qua email/SMS" },
               { step: "4", title: "Khám bệnh", desc: "Đến cơ sở y tế hoặc khám online" }
             ].map((item, index) => (
-              <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-[#FFC419] rounded-full flex items-center justify-center text-white text-[24px] font-bold mx-auto mb-4">
+              <div key={index} className={styles.processStep}>
+                <div className={styles.stepCircle}>
                   {item.step}
                 </div>
-                <h4 className="text-[18px] font-semibold text-[#2c3e50] mb-2">{item.title}</h4>
-                <p className="text-gray-600 text-[14px]">{item.desc}</p>
+                <h4 className={styles.stepTitle}>{item.title}</h4>
+                <p className={styles.stepDesc}>{item.desc}</p>
               </div>
             ))}
           </div>
         </section>
 
         {/* Call to action */}
-        <section className="py-16 px-20 bg-[#E3FFF8] text-center">
-          <h3 className="text-[32px] font-bold text-[#2c3e50] mb-4">Sẵn sàng chăm sóc sức khỏe của bạn?</h3>
-          <p className="text-[18px] text-gray-700 mb-6">Đặt lịch ngay hôm nay để nhận ưu đãi đặc biệt</p>
-          <button className="bg-[#FFC419] hover:bg-[#e6ae14] text-white font-bold px-10 py-4 rounded-xl shadow-lg text-[18px]">
+        <section className={styles.ctaSection}>
+          <h3 className={styles.ctaTitle}>Sẵn sàng chăm sóc sức khỏe của bạn?</h3>
+          <p className={styles.ctaSubtitle}>Đặt lịch ngay hôm nay để nhận ưu đãi đặc biệt</p>
+          <button className={styles.ctaButton}>
             Đặt lịch ngay
           </button>
         </section>
