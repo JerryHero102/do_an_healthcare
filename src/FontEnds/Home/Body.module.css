@@ -1,0 +1,145 @@
+@reference "tailwindcss";
+
+/* Container */
+.wrapper {
+  @apply w-full;
+}
+
+/* Banner section */
+.bannerSection {
+  @apply h-[400px] bg-[#E3FFF8] flex flex-col justify-center items-center text-center;
+}
+
+.bannerTitle {
+  @apply text-[32px] font-bold text-[#2c3e50];
+}
+
+.bannerSubtitle {
+  @apply text-[18px] mt-2 text-gray-600;
+}
+
+.bannerButton {
+  @apply mt-4 bg-[#FFC419] hover:bg-[#e6ae14] text-white font-semibold px-6 py-2 rounded-xl shadow-md;
+}
+
+/* Intro section */
+.introSection {
+  @apply py-10 px-20 text-center;
+}
+
+.introTitle {
+  @apply text-[26px] font-semibold text-[#2c3e50];
+}
+
+.introText {
+  @apply mt-3 text-[16px] text-gray-600 leading-relaxed;
+}
+
+/* Services section */
+.servicesSection {
+  @apply py-10 px-20;
+}
+
+.sectionTitle {
+  @apply text-[24px] font-semibold mb-5;
+}
+
+.sectionTitleWithColor {
+  @apply text-[24px] font-semibold mb-5 text-[#2c3e50];
+}
+
+.servicesGrid {
+  @apply grid grid-cols-4 gap-6;
+}
+
+.serviceCard {
+  @apply bg-white shadow-md p-6 rounded-xl hover:shadow-lg transition-all cursor-pointer;
+}
+
+.serviceTitle {
+  @apply text-[18px] font-medium text-[#2c3e50];
+}
+
+.serviceLink {
+  @apply text-gray-500 mt-2 text-[14px];
+}
+
+/* Branches section */
+.branchesSection {
+  @apply py-10 px-20 bg-[#F8F9FA];
+}
+
+.branchesGrid {
+  @apply grid grid-cols-3 gap-6;
+}
+
+.branchCard {
+  @apply bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all;
+}
+
+.branchName {
+  @apply text-[18px] font-medium text-[#2c3e50];
+}
+
+.branchAddress {
+  @apply text-gray-600 text-[14px] mt-2;
+}
+
+.branchHotline {
+  @apply text-[14px] mt-1 font-semibold text-[#2c3e50];
+}
+
+/* Doctors section */
+.doctorsSection {
+  @apply py-10 px-20;
+}
+
+.doctorsGrid {
+  @apply grid grid-cols-4 gap-6;
+}
+
+.doctorCard {
+  @apply bg-white shadow-md p-6 rounded-xl hover:shadow-lg transition-all;
+}
+
+.doctorName {
+  @apply text-[18px] font-medium text-[#2c3e50];
+}
+
+.doctorSpecialty {
+  @apply text-gray-600 text-[14px] mt-1;
+}
+
+.doctorExp {
+  @apply text-gray-500 text-[13px] mt-1;
+}
+
+.doctorButton {
+  @apply mt-3 text-[#1e90ff] text-[14px] hover:underline;
+}
+
+/* Equipment section */
+.equipmentSection {
+  @apply py-10 px-20 bg-[#F8F9FA];
+}
+
+.equipmentGrid {
+  @apply grid grid-cols-4 gap-6;
+}
+
+.equipmentCard {
+  @apply bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all;
+}
+
+.equipmentName {
+  @apply text-[18px] font-medium text-[#2c3e50];
+}
+
+.equipmentDesc {
+  @apply text-gray-600 text-[14px] mt-2;
+}
+
+.equipmentLink {
+  @apply text-[13px] text-[#1e90ff] mt-2 cursor-pointer hover:underline;
+}
+
