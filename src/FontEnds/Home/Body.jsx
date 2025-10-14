@@ -97,6 +97,24 @@ const Body = () => {
         </div>
       </section>
 
+      {/* ✅ Trang thiết bị */}
+      <section className="equipment-section">
+        <h3>Trang thiết bị chẩn đoán & điều trị hiện đại</h3>
+        <div className="grid-4">
+          {[
+            { name: "Máy siêu âm 5D Doppler", desc: "Chẩn đoán hình ảnh độ chính xác cao" },
+            { name: "Máy xét nghiệm sinh hóa tự động", desc: "Cho kết quả nhanh và chính xác" },
+            { name: "Máy nội soi Tai Mũi Họng", desc: "Hình ảnh sắc nét, ít xâm lấn" },
+            { name: "Hệ thống X-Quang kỹ thuật số", desc: "Giảm liều tia X, an toàn cho bệnh nhân" }
+          ].map((tool, index) => (
+            <div key={index} className="box">
+              <h4>{tool.name}</h4>
+              <p>{tool.desc}</p>
+              <p className="link-btn">Xem chi tiết →</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
     </div>
   );
