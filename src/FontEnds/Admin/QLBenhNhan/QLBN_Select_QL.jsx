@@ -27,7 +27,7 @@ const QLBN_Select_QL = ({ setContext }) => {
         
         <ButtonPrimary 
             //Nhấn vào sẽ thay thế context thành "BN Đã Khám"
-            onClick={() => setContext("BN Đã Khám")}
+            onClick={() => setContext("Danh sách bệnh nhân đã khám")}
         >
             Danh sách bệnh nhân đã khám bệnh
         </ButtonPrimary>

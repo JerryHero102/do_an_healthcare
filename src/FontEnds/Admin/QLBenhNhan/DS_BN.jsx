@@ -4,8 +4,8 @@ const ButtonPrimary = ({ children, onClick }) => (
     className="bg-[#45C3D2] text-sm text-white px-2 py-1 rounded hover:bg-[#e6b800] cursor-pointer transition mx-1"
     onClick={onClick}>{children}</button>);
 
-// Quản lý bệnh nhân chưa khám bệnh
-const DS_BN_ChuaKham = ({setContext}) => {
+// Quản lý bệnh nhân đã khám bệnh
+const DS_BN_DaKham = ({setContext}) => {
   return (
     <div className="px-2">
       {/* Breadcrumb */}
@@ -16,40 +16,27 @@ const DS_BN_ChuaKham = ({setContext}) => {
                 onClick={() => setContext("Quản lý Bệnh Nhân")}>
                 Quản lý Bệnh Nhân
             </span>
-            &nbsp;&gt;&nbsp; Danh sách bệnh nhân chưa khám bệnh
+            &nbsp;&gt;&nbsp; Danh sách bệnh nhân đã khám bệnh
         </div>
         {/* Tittle */}
         <div className="flex items-center justify-between mb-2 bg-white p-4 rounded-md shadow">
             <div>
-                <h2 className="text-xl font-bold text-[#222]">Danh sách Bệnh Nhân chưa khám bệnh</h2>
-                <h6 className="text-gray-500 text-sm">Tổng cộng 0 bệnh nhân chưa khám bệnh</h6>
+                <h2 className="text-xl font-bold text-[#222]">Danh sách Bệnh Nhân</h2>
+                <h6 className="text-gray-500 text-sm"></h6>
             </div>
             <div>
                 <button className="bg-[#45C3D2] text-sm text-white px-2 py-1 rounded hover:bg-[#e6b800] cursor-pointer transition mx-1">Đăng ký khám bệnh</button>
-                <ButtonPrimary onClick={() => setContext("Thêm BN mới")}>Thêm bệnh nhân</ButtonPrimary>  
+                <ButtonPrimary onClick={() => setContext("Thêm BN mới")}>Thêm bệnh nhân</ButtonPrimary> 
             </div>
         </div>
 
-        {/* Tìm kiếm     */}
+        {/* Tìm kiếm*/}
         <div className="bg-white p-2 mb-4 rounded-md shadow flex items-center gap-5">
-            <input type="text" placeholder="Tìm kiếm tên bệnh nhân, CCCD, năm sinh, khoa khám" className="w-[500px] flex border-2 border-gray-300 rounded-md px-2"/>
-            <select className="border-2 border-gray-300 rounded-md px-2">
-                <option>Theo ngày</option>
-                <option>Hôm nay</option>
-                <option>Hôm qua</option>
-                <option>Hôm kia</option>
-            </select>
-            <select className="border-2 border-gray-300 rounded-md px-2">
-                <option>Chuyên Khoa</option>
-                <option>Khoa cấp cứu</option>
-                <option>Khoa sản</option>
-                <option>Khoa nhi</option>
-                <option>Khoa tim mạch</option>
-            </select>
-            <select className="border-2 border-gray-300 rounded-md px-2">
-                <option>Bác sĩ</option>
-                <option>Hoạt động</option>
-            </select>
+            <input type="text" placeholder="Tìm kiếm tên bệnh nhân, CCCD, mã bệnh nhân" className="w-[500px] flex border-[1px] border-gray-300 rounded-md px-2"/>
+            <div className="flex items-center border-[1px] border-gray-300 rounded-md px-2 py-1 h-[27px]">
+                <label className="text-sm mr-2">Ngày ĐK PK:</label>
+                <input type="date"/>
+            </div>
             <button className="bg-[#45C3D2] text-sm text-white px-4 py-2 rounded hover:bg-[#e6b800] cursor-pointer transition">Tìm kiếm</button>
         </div>
 
@@ -109,4 +96,4 @@ const DS_BN_ChuaKham = ({setContext}) => {
   );
 };
 
-export default DS_BN_ChuaKham;
+export default DS_BN_DaKham;
