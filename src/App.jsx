@@ -7,6 +7,7 @@ import Login_E from './FontEnds/Admin/auth/Login_E';
 import ChuyenKhoa from './FontEnds/ChuyenKhoa/ChuyenKhoa';
 import ChuyenGia from './FontEnds/ChuyenGia/ChuyenGia';
 import DichVu from './FontEnds/DichVu/DichVu';
+import DatLichHen from './FontEnds/DatLichHen/DatLichHen';
 
 function App() {
   return (
@@ -15,6 +16,9 @@ function App() {
 
         {/*Trang Home: Hiển thị Header + Body + Footer */}
         <Route path="/" element={<><Header /><Body /><Footer /></>} />
+
+        {/* Trang Đặt Lịch Hẹn */}
+        <Route path="/dat-lich-hen" element={<DatLichHen />} />
 
         {/* Trang Chuyên Khoa */}
         <Route path="/chuyen-khoa" element={<ChuyenKhoa />} />
