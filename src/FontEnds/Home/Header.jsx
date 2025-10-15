@@ -13,6 +13,9 @@ const Header = () => {
           <a href="/" className={styles.navLink}>
             Trang chủ
           </a>
+          <a href="/dat-lich-hen" className={styles.navLink}>
+            Đặt lịch hẹn
+          </a>
           <a href="/chuyen-khoa" className={styles.navLink}>
             Chuyên Khoa
           </a>

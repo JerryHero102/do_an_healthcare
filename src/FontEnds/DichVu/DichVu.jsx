@@ -62,9 +62,11 @@ const DichVu = () => {
                 <h4 className={styles.serviceTitle}>{service.name}</h4>
                 <p className={styles.serviceDesc}>{service.desc}</p>
                 <p className={styles.servicePrice}>{service.price}</p>
-                <button className={styles.serviceButton}>
-                  Đặt lịch ngay
-                </button>
+                <a href="/dat-lich-hen">
+                  <button className={styles.serviceButton}>
+                    Đặt lịch ngay
+                  </button>
+                </a>
               </div>
             ))}
           </div>
@@ -128,9 +130,11 @@ const DichVu = () => {
                     </li>
                   ))}
                 </ul>
-                <button className={pkg.popular ? styles.packageButtonPopular : styles.packageButton}>
-                  Chọn gói này
-                </button>
+                <a href="/dat-lich-hen">
+                  <button className={pkg.popular ? styles.packageButtonPopular : styles.packageButton}>
+                    Chọn gói này
+                  </button>
+                </a>
               </div>
             ))}
           </div>
@@ -161,9 +165,11 @@ const DichVu = () => {
         <section className={styles.ctaSection}>
           <h3 className={styles.ctaTitle}>Sẵn sàng chăm sóc sức khỏe của bạn?</h3>
           <p className={styles.ctaSubtitle}>Đặt lịch ngay hôm nay để nhận ưu đãi đặc biệt</p>
-          <button className={styles.ctaButton}>
-            Đặt lịch ngay
-          </button>
+          <a href="/dat-lich-hen">
+            <button className={styles.ctaButton}>
+              Đặt lịch ngay
+            </button>
+          </a>
         </section>
       </div>
 
