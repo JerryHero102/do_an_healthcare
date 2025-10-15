@@ -1,8 +1,3 @@
-// QL_Quy.jsx (Component Quản lý Quỹ)
-
-import React from 'react';
-
-// Giả định component nút (tương tự như ButtonPrimary)
 const ActionButton = ({ children, colorClass, onClick }) => (
     <button
         className={`px-4 py-2 text-white rounded-md font-semibold transition hover:opacity-90 ${colorClass}`}

@@ -1,4 +1,4 @@
-
+import styles from '../components/prototype.css'
 const ButtonPrimary = ({ children, onClick }) => (
   <button 
     className="bg-[#45C3D2] text-sm text-white px-2 py-1 rounded hover:bg-[#e6b800] cursor-pointer transition mx-1"
@@ -11,12 +11,8 @@ const DS_BN_DaKham = ({setContext}) => {
       {/* Breadcrumb */}
         <div className="text-[10px] text-gray-900 bg-white mb-2 mt-1 px-4 py-2 rounded-md">
             {/*Phần text "Quản lý bệnh nhân" được làm thành nút bấm */}
-            <span 
-                className="cursor-pointer text-gray-600 hover:text-gray-900" 
-                onClick={() => setContext("Quản lý Bệnh Nhân")}>
-                Quản lý Bệnh Nhân
-            </span>
-            &nbsp;&gt;&nbsp; Danh sách bệnh nhân đã khám bệnh
+            {/* &nbsp;&gt;&nbsp;  */}
+            Danh sách bệnh nhân
         </div>
         {/* Tittle */}
         <div className="flex items-center justify-between mb-2 bg-white p-4 rounded-md shadow">

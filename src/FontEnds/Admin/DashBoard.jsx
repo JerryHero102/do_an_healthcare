@@ -1,5 +1,4 @@
 import { useState } from "react";
-import QLBN_Select_QL from "./QLBenhNhan/QLBN_Select_QL";
 import DS_BN_ChuaKham from "./QLBenhNhan/DS_BN_ChuaKham";
 import DS_BN from "./QLBenhNhan/DS_BN";
 import Them_BN from "./QLBenhNhan/Them_BN";

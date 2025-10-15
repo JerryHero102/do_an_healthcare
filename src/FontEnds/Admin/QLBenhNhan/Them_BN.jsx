@@ -3,9 +3,11 @@ const ButtonPrimary = ({ children, onClick }) => (
   <button 
     className="bg-[#45C3D2] text-sm text-white px-2 py-1 rounded hover:bg-[#e6b800] cursor-pointer transition mx-1"
     onClick={onClick}>{children}</button>);
-//END BUTTON
 
-// Tittle (VD: Họ và tên)
+// Text
+const H1 = ({children, className}) => (
+  <h1 className={`text-lg font-bold text-gray-800 ${className}`}>{children}</h1>
+);
 const SubTittle = ({ children }) => (
   <h6 className="text-gray-500 text-sm mb-1">{children}</h6>
 );
@@ -22,6 +24,7 @@ const Input = (props) => (
   />
 );
 
+
 // Thêm Bệnh Nhân Mới (Chưa đăng ký khám lần nào) hoặc chưa đăng ký trên web
 const Them_BN = ({setContext}) => {
   return (
@@ -29,15 +32,16 @@ const Them_BN = ({setContext}) => {
       {/* Breadcrumb */}
       <div className="text-[10px] text-gray-900 bg-white mb-2 mt-1 px-4 py-2 rounded-md">
         {/*Phần text "Quản lý bệnh nhân" được làm thành nút bấm */}
-        <span 
+        {/* <span 
           className="cursor-pointer text-gray-600 hover:text-gray-900" 
           onClick={() => setContext("Quản lý Bệnh Nhân")}>
           Quản lý Bệnh Nhân 
         </span>
-        &nbsp;&gt;&nbsp; Thêm bệnh nhân mới
-        </div>
+        &nbsp;&gt;&nbsp;  */}
+        Thêm bệnh nhân mới
+      </div>
 
-        {/* Tittle */}
+      {/* Tittle */}
       <div className="flex items-center justify-between mb-2 bg-white p-4 rounded-md shadow">
         <h2>Thêm bệnh nhân mới</h2>
         <ButtonPrimary onClick={() => setContext("Quản lý Bệnh Nhân")}>
@@ -45,9 +49,8 @@ const Them_BN = ({setContext}) => {
         </ButtonPrimary>
       </div>
 
-
       {/* ----------THÔNG TIN CÁ NHÂN---------- */}
-     <form className="w-full bg-white rounded-md px-5 py-4 shadow mb-4">
+      <form className="w-full bg-white rounded-md px-5 py-4 shadow mb-4">
         <h2 className="text-lg font-bold text-gray-800 mb-4 border-b-[1px] pb-2">Thông tin Cá nhân</h2>
         
         {/*HỌ VÀ TÊN - NGÀY SINH - NƠI SINH */}        
