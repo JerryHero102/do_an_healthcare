@@ -4,6 +4,9 @@ import Body from './FontEnds/Home/Body';
 import Footer from './FontEnds/Home/Footer';
 import DashBoard from './FontEnds/Admin/DashBoard';
 import Login_E from './FontEnds/Admin/auth/Login_E';
+import ChuyenKhoa from './FontEnds/ChuyenKhoa/ChuyenKhoa';
+import ChuyenGia from './FontEnds/ChuyenGia/ChuyenGia';
+import DichVu from './FontEnds/DichVu/DichVu';
 
 function App() {
   return (
@@ -11,15 +14,17 @@ function App() {
       <Routes>
 
         {/*Trang Home: Hiển thị Header + Body + Footer */}
-        <Route 
-          path="/" 
-          element={
-            <>
-              <Header />
-              <Body />
-              <Footer />
-            </>
-          }/>
+        <Route path="/" element={<><Header /><Body /><Footer /></>} />
+
+        {/* Trang Chuyên Khoa */}
+        <Route path="/chuyen-khoa" element={<ChuyenKhoa />} />
+
+        {/* Trang Chuyên Gia */}
+        <Route path="/chuyen-gia" element={<ChuyenGia />} />
+
+        {/* Trang Dịch Vụ */}
+        <Route path="/dich-vu" element={<DichVu />} />
+
 
         {/*Trang Admin riêng */}
         <Route path="/Admin" element={<Navigate to="/Admin/Login" replace />} />
