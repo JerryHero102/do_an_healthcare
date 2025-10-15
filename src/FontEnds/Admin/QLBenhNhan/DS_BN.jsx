@@ -1,4 +1,3 @@
-import styles from '../components/prototype.css'
 const ButtonPrimary = ({ children, onClick }) => (
   <button 
     className="bg-[#45C3D2] text-sm text-white px-2 py-1 rounded hover:bg-[#e6b800] cursor-pointer transition mx-1"
