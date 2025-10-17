@@ -1,0 +1,9 @@
+{
+  "semi": true,           // Thêm dấu chấm phẩy (semicolon) ở cuối câu lệnh
+  "singleQuote": true,    // Sử dụng dấu nháy đơn ('') thay vì dấu nháy kép ("")
+  "printWidth": 100,      // Giới hạn độ dài tối đa của một dòng code
+  "tabWidth": 2,          // Số khoảng trắng cho mỗi lần thụt lề
+  "jsxSingleQuote": true, // Sử dụng dấu nháy đơn cho thuộc tính JSX
+  // "plugins" không cần thiết nếu bạn chỉ dùng plugin Tailwind CSS
+  // vì nó được tải tự động.
+}
