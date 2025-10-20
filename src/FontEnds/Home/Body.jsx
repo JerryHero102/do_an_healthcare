@@ -128,22 +128,28 @@ const Body = () => {
       </section>
 
       {/* ✅ Danh sách dịch vụ/chuyên khoa */}
-      <section className={styles.servicesSection}>
-        <h3 className={styles.sectionTitle}>Chuyên khoa nổi bật</h3>
-        <div className={styles.servicesGrid}>
-          {[
-            "Nội khoa",
-            "Tai Mũi Họng",
-            "Xét nghiệm - Sinh hóa",
-            "Chẩn đoán hình ảnh"
-          ].map((service, index) => (
-            <div key={index} className={styles.serviceCard}>
-              <h4 className={styles.serviceTitle}>{service}</h4>
-              <p className={styles.serviceLink}>Xem chi tiết dịch vụ →</p>
-            </div>
-          ))}
-        </div>
-      </section>
+      {/* ✅ Danh sách chuyên khoa nổi bật */}
+<section className={styles.servicesSection}>
+  <h3 className={styles.sectionTitle}>Chuyên khoa nổi bật</h3>
+  <div className={styles.servicesGrid}>
+    {[
+      { name: "Nội khoa", slug: "noi-khoa" },
+      { name: "Tai Mũi Họng", slug: "tai-mui-hong" },
+      { name: "Xét nghiệm - Sinh hóa", slug: "xet-nghiem-sinh-hoa" },
+      { name: "Chẩn đoán hình ảnh", slug: "chan-doan-hinh-anh" }
+    ].map((service, index) => (
+      <a 
+        key={index} 
+        href={`/${service.slug}`} 
+        className={styles.serviceCard}
+      >
+        <h4 className={styles.serviceTitle}>{service.name}</h4>
+        <p className={styles.serviceLink}>Xem chi tiết dịch vụ →</p>
+      </a>
+    ))}
+  </div>
+</section>
+
 
       {/* ✅ Danh sách chi nhánh / cơ sở */}
       <section className={styles.branchesSection}>
@@ -184,68 +190,81 @@ const Body = () => {
       </section>
 
       {/* ✅ Trang thiết bị hiện đại */}
-      <section className={styles.equipmentSection}>
-        <h3 className={styles.sectionTitleWithColor}>Trang thiết bị chẩn đoán & điều trị hiện đại</h3>
-        <div className={styles.equipmentGrid}>
-          {[
-            { name: "Máy siêu âm 5D Doppler", desc: "Chẩn đoán hình ảnh độ chính xác cao" },
-            { name: "Máy xét nghiệm sinh hóa tự động", desc: "Cho kết quả nhanh và chính xác" },
-            { name: "Máy nội soi Tai Mũi Họng", desc: "Hình ảnh sắc nét, ít xâm lấn" },
-            { name: "Hệ thống X-Quang kỹ thuật số", desc: "Giảm liều tia X, an toàn cho bệnh nhân" }
-          ].map((tool, index) => (
-            <div key={index} className={styles.equipmentCard}>
-              <h4 className={styles.equipmentName}>{tool.name}</h4>
-              <p className={styles.equipmentDesc}>{tool.desc}</p>
-              <p className={styles.equipmentLink}>Xem chi tiết →</p>
-            </div>
-          ))}
-        </div>
-      </section>
+<section className={styles.equipmentSection}>
+  <h3 className={styles.sectionTitleWithColor}>Trang thiết bị chẩn đoán & điều trị hiện đại</h3>
+  <div className={styles.equipmentGrid}>
+    {[
+      { name: "Máy siêu âm 5D Doppler", desc: "Chẩn đoán hình ảnh độ chính xác cao", slug: "may-sieu-am-5d" },
+      { name: "Máy xét nghiệm sinh hóa tự động", desc: "Cho kết quả nhanh và chính xác", slug: "may-xet-nghiem-sinh-hoa" },
+      { name: "Máy nội soi Tai Mũi Họng", desc: "Hình ảnh sắc nét, ít xâm lấn", slug: "may-noi-soi-tai-mui-hong" },
+      { name: "Hệ thống X-Quang kỹ thuật số", desc: "Giảm liều tia X, an toàn cho bệnh nhân", slug: "he-thong-xquang-ky-thuat-so" }
+    ].map((tool, index) => (
+      <a
+        key={index}
+        href={`/${tool.slug}`}
+        className={styles.equipmentCard}
+      >
+        <h4 className={styles.equipmentName}>{tool.name}</h4>
+        <p className={styles.equipmentDesc}>{tool.desc}</p>
+        <p className={styles.equipmentLink}>Xem chi tiết →</p>
+      </a>
+    ))}
+  </div>
+</section>
 
       {/* ✅ Khám phá các dịch vụ */}
-      <section className={styles.discoverSection}>
-        <h3 className={styles.sectionTitleWithColor}>Khám phá các dịch vụ của chúng tôi</h3>
-        <p className={styles.discoverSubtitle}>
-          Chúng tôi cung cấp đa dạng các dịch vụ y tế chất lượng cao với đội ngũ chuyên môn và trang thiết bị hiện đại
-        </p>
-        <div className={styles.discoverGrid}>
-          {[
-            { 
-              icon: "🏥", 
-              title: "Khám tổng quát", 
-              desc: "Khám sức khỏe toàn diện với bác sĩ giàu kinh nghiệm"
-            },
-            { 
-              icon: "🔬", 
-              title: "Xét nghiệm", 
-              desc: "Xét nghiệm máu, nước tiểu với thiết bị hiện đại"
-            },
-            { 
-              icon: "📷", 
-              title: "Chẩn đoán hình ảnh", 
-              desc: "Siêu âm, X-quang, CT Scanner chất lượng cao"
-            },
-            { 
-              icon: "💊", 
-              title: "Tư vấn điều trị", 
-              desc: "Tư vấn phác đồ điều trị phù hợp cho từng bệnh nhân"
-            }
-          ].map((service, index) => (
-            <div key={index} className={styles.discoverCard}>
-              <div className={styles.discoverIcon}>{service.icon}</div>
-              <h4 className={styles.discoverTitle}>{service.title}</h4>
-              <p className={styles.discoverDesc}>{service.desc}</p>
-            </div>
-          ))}
-        </div>
-        <div className={styles.discoverButtonContainer}>
-          <a href="/dich-vu">
-            <button className={styles.discoverButton}>
-              Xem tất cả dịch vụ →
-            </button>
-          </a>
-        </div>
-      </section>
+<section className={styles.discoverSection}>
+  <h3 className={styles.sectionTitleWithColor}>Khám phá các dịch vụ của chúng tôi</h3>
+  <p className={styles.discoverSubtitle}>
+    Chúng tôi cung cấp đa dạng các dịch vụ y tế chất lượng cao với đội ngũ chuyên môn và trang thiết bị hiện đại
+  </p>
+  <div className={styles.discoverGrid}>
+    {[
+      { 
+        icon: "🏥", 
+        title: "Khám tổng quát", 
+        desc: "Khám sức khỏe toàn diện với bác sĩ giàu kinh nghiệm",
+        link: "/kham-suc-khoe-tong-quat"
+      },
+      { 
+        icon: "🔬", 
+        title: "Xét nghiệm", 
+        desc: "Xét nghiệm máu, nước tiểu với thiết bị hiện đại",
+        link: "/xet-nghiem-tai-nha"
+      },
+      { 
+        icon: "🏃", 
+        title: "Phục hồi chức năng", 
+        desc: "Vật lý trị liệu, phục hồi sau chấn thương và bệnh lý",
+        link: "/phuc-hoi-chuc-nang"
+      },
+      { 
+        icon: "🥗", 
+        title: "Tư vấn dinh dưỡng", 
+        desc: "Chế độ ăn uống khoa học phù hợp với tình trạng sức khỏe",
+        link: "/tu-van-dinh-duong"
+      }
+    ].map((service, index) => (
+      <a 
+        key={index} 
+        href={service.link} 
+        className={styles.discoverCard}
+      >
+        <div className={styles.discoverIcon}>{service.icon}</div>
+        <h4 className={styles.discoverTitle}>{service.title}</h4>
+        <p className={styles.discoverDesc}>{service.desc}</p>
+      </a>
+    ))}
+  </div>
+
+  <div className={styles.discoverButtonContainer}>
+    <a href="/dich-vu">
+      <button className={styles.discoverButton}>
+        Xem tất cả dịch vụ →
+      </button>
+    </a>
+  </div>
+</section>
 
     </div>
   );

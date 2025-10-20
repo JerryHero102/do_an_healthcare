@@ -16,61 +16,76 @@ const DichVu = () => {
         </section>
 
         {/* Danh sách dịch vụ chính */}
-        <section className={styles.servicesSection}>
-          <h3 className={styles.sectionTitle}>Dịch vụ chính</h3>
-          <div className={styles.servicesGrid}>
-            {[
-              { 
-                name: "Khám bệnh trực tuyến", 
-                desc: "Tư vấn sức khỏe từ xa qua video call với bác sĩ chuyên khoa",
-                icon: "💻",
-                price: "Từ 200.000đ"
-              },
-              { 
-                name: "Khám sức khỏe tổng quát", 
-                desc: "Gói khám toàn diện với đầy đủ các xét nghiệm cơ bản",
-                icon: "🏥",
-                price: "Từ 1.500.000đ"
-              },
-              { 
-                name: "Xét nghiệm tận nơi", 
-                desc: "Lấy mẫu xét nghiệm tại nhà, kết quả nhanh chóng",
-                icon: "🔬",
-                price: "Từ 500.000đ"
-              },
-              { 
-                name: "Tư vấn dinh dưỡng", 
-                desc: "Chế độ ăn uống khoa học phù hợp với tình trạng sức khỏe",
-                icon: "🥗",
-                price: "Từ 300.000đ"
-              },
-              { 
-                name: "Phục hồi chức năng", 
-                desc: "Vật lý trị liệu, phục hồi sau chấn thương và bệnh lý",
-                icon: "🏃",
-                price: "Từ 400.000đ"
-              },
-              { 
-                name: "Chăm sóc tại nhà", 
-                desc: "Y tá, bác sĩ đến tận nhà chăm sóc người bệnh",
-                icon: "🏠",
-                price: "Từ 800.000đ"
-              }
-            ].map((service, index) => (
-              <div key={index} className={styles.serviceCard}>
-                <div className={styles.serviceIcon}>{service.icon}</div>
-                <h4 className={styles.serviceTitle}>{service.name}</h4>
-                <p className={styles.serviceDesc}>{service.desc}</p>
-                <p className={styles.servicePrice}>{service.price}</p>
-                <a href="/dat-lich-hen">
-                  <button className={styles.serviceButton}>
-                    Đặt lịch ngay
-                  </button>
-                </a>
-              </div>
-            ))}
-          </div>
-        </section>
+<section className={styles.servicesSection}>
+  <h3 className={styles.sectionTitle}>Dịch vụ chính</h3>
+  <div className={styles.servicesGrid}>
+    {[
+      { 
+        name: "Khám bệnh trực tuyến", 
+        desc: "Tư vấn sức khỏe từ xa qua video call với bác sĩ chuyên khoa",
+        icon: "💻",
+        price: "Từ 200.000đ",
+        slug: "kham-benh-truc-tuyen"
+      },
+      { 
+        name: "Khám sức khỏe tổng quát", 
+        desc: "Gói khám toàn diện với đầy đủ các xét nghiệm cơ bản",
+        icon: "🏥",
+        price: "Từ 1.500.000đ",
+        slug: "kham-suc-khoe-tong-quat"
+      },
+      { 
+        name: "Xét nghiệm tận nơi", 
+        desc: "Lấy mẫu xét nghiệm tại nhà, kết quả nhanh chóng",
+        icon: "🔬",
+        price: "Từ 500.000đ",
+        slug: "xet-nghiem-tai-nha"
+      },
+      { 
+        name: "Tư vấn dinh dưỡng", 
+        desc: "Chế độ ăn uống khoa học phù hợp với tình trạng sức khỏe",
+        icon: "🥗",
+        price: "Từ 300.000đ",
+        slug: "tu-van-dinh-duong"
+      },
+      { 
+        name: "Phục hồi chức năng", 
+        desc: "Vật lý trị liệu, phục hồi sau chấn thương và bệnh lý",
+        icon: "🏃",
+        price: "Từ 400.000đ",
+        slug: "phuc-hoi-chuc-nang"
+      },
+      { 
+        name: "Chăm sóc tại nhà", 
+        desc: "Y tá, bác sĩ đến tận nhà chăm sóc người bệnh",
+        icon: "🏠",
+        price: "Từ 800.000đ",
+        slug: "cham-soc-tai-nha"
+      }
+    ].map((service, index) => (
+      <div key={index} className={styles.serviceCard}>
+        <div className={styles.serviceIcon}>{service.icon}</div>
+        <h4 className={styles.serviceTitle}>{service.name}</h4>
+        <p className={styles.serviceDesc}>{service.desc}</p>
+        <p className={styles.servicePrice}>{service.price}</p>
+
+        <div className={styles.buttonGroup}>
+          <a href={`/${service.slug}`}>
+            <button className={styles.detailButton}>
+              Xem chi tiết
+            </button>
+          </a>
+          <a href="/dat-lich-hen">
+            <button className={styles.serviceButton}>
+              Đặt lịch ngay
+            </button>
+          </a>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
 
         {/* Gói khám sức khỏe */}
         <section className={styles.packageSection}>

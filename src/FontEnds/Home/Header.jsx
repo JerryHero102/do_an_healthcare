@@ -30,9 +30,11 @@ const Header = () => {
 
       {/* ✅ Phần bên phải: Login hoặc Hotline */}
       <div className={styles.rightSection}>
+        <a href="/Admin/Login" className={styles.navLink}>
         <button className={styles.loginButton}>
           Đăng nhập
         </button>
+        </a>
       </div>
 
     </div>
